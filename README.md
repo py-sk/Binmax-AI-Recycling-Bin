@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img width="400" height="400" src="./api/bg.png">
+  <img  width="950" height="625" src="./api/bg.png">
 </p>
 <h1 align="center">BinMax: AI Recycling Bin</h1> 
 
