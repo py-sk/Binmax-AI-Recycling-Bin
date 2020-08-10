@@ -13,6 +13,12 @@ Binmax is an AI-enabled smart recycling bin which recognises and personalizes ad
 
 <hr>
 
+### Showcase Website
+
+Checkout our showcase website for Binmax [here!](http://kyaw.tech/binmax)
+
+<hr>
+
 ### Features
 
 * **Physical Recycling Bin (Kiosk Style)** created from vanguard cardboard, corrugated boards and aluminium profiles, the recycling bin was inspired by the cartoon character Baymax. There is a removable drawer-style compartment for the trash bins. The two bins are meant to separate recyclable trash from non-recyclable or contaminated trash.
