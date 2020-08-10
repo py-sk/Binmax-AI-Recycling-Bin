@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Video Stream</title>
+    <meta http-equiv="content-type" charset="utf-8">
+  </head>
+  
+  <body>
+    <p id="p1">Hello world</p>
+<button onclick="cap()">Capture Photo</button>
+    <img id="currentImage" style="border:2px solid teal">
+    
+    <script>
+      var flag = true;
+      var img = document.getElementById("currentImage");
+      url = document.URL.replace('http','ws')
+      var ws = new WebSocket(url + "stream");
+      var old_frame;
+      ws.onopen = function() {
+          console.log("connection was established");
+          ws.send("next");
+      };
+
+      ws.onmessage = function(msg) {
+	  
+	  if (msg.data.length > 1000) {img.src = 'data:image/png;base64, ' + msg.data; old_frame = img.src}
+
+	  else if (msg.data=='image saved'){
+        window.location.replace("../image")
+      }
+      else {
+            img.src = old_frame;
+	    document.getElementById("p1").innerHTML = msg.data;
+	  }
+      };
+      function cap() {
+        ws.send("prediction")
+      }
+      img.onload = function() {
+        ws.send("next");	
+      }
+
+    </script>
+  </body>
+</html>
